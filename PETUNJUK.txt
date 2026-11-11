@@ -1,0 +1,34 @@
+KASIR DIGITAL UMKM - LOGIN & DAFTAR AKUN
+
+ISI FOLDER
+- index.php     : halaman utama kasir (hanya dapat dibuka setelah login)
+- login.php     : halaman login
+- register.php  : halaman daftar akun
+- logout.php    : proses keluar
+- auth.php      : pemeriksaan sesi login
+- db.php        : koneksi database
+- database.sql  : tabel akun MySQL
+- app.js        : fungsi aplikasi kasir
+- style.css     : tampilan aplikasi
+
+CARA MEMASANG DI XAMPP
+1. Ekstrak folder kasir_umkm_login ke C:\xampp\htdocs\
+2. Buka XAMPP Control Panel, lalu jalankan Apache dan MySQL.
+3. Buka http://localhost/phpmyadmin
+4. Pilih menu Import, pilih file database.sql dari folder kasir_umkm_login, lalu klik Import/Go.
+   Alternatif: buka tab SQL, salin isi database.sql, lalu jalankan.
+5. Buka http://localhost/kasir_umkm_login/register.php
+6. Isi nama, email, dan password minimal 8 karakter untuk membuat akun.
+7. Setelah berhasil daftar, Anda langsung masuk ke dashboard kasir.
+8. Untuk masuk lagi, buka http://localhost/kasir_umkm_login/login.php
+9. Klik tombol Keluar di kanan atas untuk logout.
+
+PENTING
+- Ini bukan akun demo. Pengguna membuat akun sendiri melalui halaman Daftar.
+- Password disimpan dengan password_hash() dan diperiksa dengan password_verify().
+- Database menyimpan akun pengguna. Data produk/transaksi aplikasi kasir yang sudah ada
+  masih disimpan di LocalStorage browser, dengan kunci terpisah berdasarkan ID akun.
+  Jadi data kasir belum disimpan ke tabel MySQL/server.
+- Pengaturan koneksi MySQL default XAMPP adalah user root tanpa password. Jika Anda
+  mengatur password MySQL, ubah nilai $dbpass di db.php.
+- Jalankan melalui alamat localhost, jangan membuka file PHP dengan klik dua kali.
